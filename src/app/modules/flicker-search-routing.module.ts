@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { FlickerSearchComponent } from './flicker-search/components/flicker-search/flicker-search.component';
+import { FlickerSearchComponent } from './components/flicker-search/flicker-search.component';
+
 
 const routes: Routes = [
   { path: '', redirectTo: 'flickr-search', pathMatch: 'full' },

@@ -3,7 +3,7 @@
     <span class="text-3xl font-bold flex my-[25px] justify-self-center">
       Buscador de flickr
     </span>
-    <div class="w-full flex flex-col">
+    <div class="w-full flex flex-col px-4">
         <mat-form-field class="w-full max-w-[300px] md:max-w-[400px] self-center">
           <mat-label>Busqueda</mat-label>
           <input matInput type="text" [(ngModel)]="value">
@@ -20,7 +20,7 @@
         <ng-container *ngIf="searchCompleted && flickrFeed?.length === 0">
           <span class="text-2xl font-bold mt-12">{{msg}}</span>
         </ng-container>
-        <img class="img-cont drop-shadow-md" *ngFor="let item of flickrFeed" [src]="item.image" alt="image">
+        <img class="img-cont drop-shadow-md" *ngFor="let item of flickrFeed" [src]="item.image" alt="image" (click)="openDialog(item)">
       </ng-container>
 
     </div>

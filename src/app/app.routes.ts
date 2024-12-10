@@ -8,6 +8,6 @@ export const routes: Routes = [
   {
     path: '',
     loadChildren: () =>
-      import('./modules/flicker-search.module').then((m) => m.FlickerSearchModule),
+      import('./modules/flickr/flicker-search.module').then((m) => m.FlickerSearchModule),
   },
 ];

@@ -6,7 +6,8 @@ import {FormsModule} from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { CommonModule } from '@angular/common';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import { FlickrService } from '../../../services/flickr.service';
+import { FlickrService } from '../../../../services/flickr.service';
+
 
 @Component({
   selector: 'app-flicker-search',

@@ -1,0 +1,36 @@
+<div class="main-search-container w-full h-full flex flex-col items-center">
+  <div class="shadow-md bg-slate-100 w-[80%] min-h-[600px] rounded-xl">
+    <span class="text-3xl font-bold flex my-[25px] justify-self-center">
+      Buscador de flickr
+    </span>
+    <div class="w-full flex flex-col">
+        <mat-form-field class="w-full max-w-[300px] md:max-w-[400px] self-center">
+          <mat-label>Busqueda</mat-label>
+          <input matInput type="text" [(ngModel)]="value">
+          @if (value) {
+            <button matSuffix mat-icon-button aria-label="Clear" (click)="value=''; searchCompleted=false">
+              <mat-icon>close</mat-icon>
+            </button>
+          }
+        </mat-form-field>
+        <button class="self-center max-w-[120px] h-[40px] w-full" mat-raised-button color="primary" (click)="startSearch()">Buscar</button>
+    </div>
+    <div class="flex flex-wrap w-full max-w-[1100px] mt-6 gap-[10px] p-[20px] justify-center justify-self-center">
+      <ng-container *ngIf="!isLoading ; else loader">
+        <ng-container *ngIf="searchCompleted && flickrFeed?.length === 0">
+          <span class="text-2xl font-bold mt-12">{{msg}}</span>
+        </ng-container>
+        <img class="img-cont drop-shadow-md" *ngFor="let item of flickrFeed" [src]="item.image" alt="image">
+      </ng-container>
+
+    </div>
+  </div>
+
+</div>
+
+<ng-template #loader>
+  <div class="w-full flex justify-center mt-24">
+    <mat-spinner class="h-[120px] w-[120px]"></mat-spinner>
+  </div>
+</ng-template>
+

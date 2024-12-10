@@ -1,18 +1,26 @@
 <div class="main-search-container w-full flex flex-col items-center">
-  <div class="flex flex-col">
-    <span class="text-3xl font-bold">
-      Buscador flickr
-    </span>
-    <mat-form-field class="example-form-field">
-      <mat-label>Busqueda</mat-label>
-      <input matInput type="text" [(ngModel)]="value">
-      @if (value) {
-        <button matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
-          <mat-icon>close</mat-icon>
-        </button>
-      }
-    </mat-form-field>
-    <button mat-raised-button>Buscar</button>
+  <span class="text-3xl font-bold mb-[15px]">
+    Buscador flickr
+  </span>
+  <div class="w-full flex flex-col">
+      <mat-form-field class="w-full max-w-[400px] self-center">
+        <mat-label>Busqueda</mat-label>
+        <input matInput type="text" [(ngModel)]="value">
+        @if (value) {
+          <button matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+            <mat-icon>close</mat-icon>
+          </button>
+        }
+      </mat-form-field>
+      <button class="self-center max-w-[200px]" mat-raised-button>Buscar</button>
+  </div>
+  <div class="flex flex-wrap w-full max-w-[1100px] mt-6 self-center gap-[10px] p-[20px]">
+      <img  class="img-cont shadow-md" src="https://content.elmueble.com/medio/2023/02/26/perro-de-raza-shiba-inu_b6387407_230226130353_900x900.jpg" alt="test">
+      <img  class="img-cont shadow-md" src="https://content.elmueble.com/medio/2023/02/26/perro-de-raza-shiba-inu_b6387407_230226130353_900x900.jpg" alt="test">
+      <img  class="img-cont shadow-md" src="https://content.elmueble.com/medio/2023/02/26/perro-de-raza-shiba-inu_b6387407_230226130353_900x900.jpg" alt="test">
+      <img  class="img-cont shadow-md" src="https://content.elmueble.com/medio/2023/02/26/perro-de-raza-shiba-inu_b6387407_230226130353_900x900.jpg" alt="test">
+      <img  class="img-cont shadow-md" src="https://content.elmueble.com/medio/2023/02/26/perro-de-raza-shiba-inu_b6387407_230226130353_900x900.jpg" alt="test">
+      <img  class="img-cont shadow-md" src="https://content.elmueble.com/medio/2023/02/26/perro-de-raza-shiba-inu_b6387407_230226130353_900x900.jpg" alt="test">
   </div>
 </div>
 

@@ -8,7 +8,7 @@ import { FlickerSearchRoutingModule } from './flicker-search-routing.module';
   declarations: [],
   imports: [
     CommonModule,
-    FlickerSearchRoutingModule
+    FlickerSearchRoutingModule,
   ]
 })
 export class FlickerSearchModule { }

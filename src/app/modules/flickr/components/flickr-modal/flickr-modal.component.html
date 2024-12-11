@@ -1,9 +1,15 @@
 
 
-<div class="w-full h-full min-w-[250px] sm:min-w-[500px] min-h-[500px] flex flex-col">
-  <h2 mat-dialog-title class=>Title</h2>
-  <div class="p-4 flex flex-col w-full sm:w-min">
-    <img [ngStyle]="{'width' : 'fit-content'}" class="w-full sm:max-w-[400px]" [src]="data.item.image" alt="image">
-    <span class="text-justify mt-2 w-full sm:w-[400px]">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</span>
+<div class="w-full h-full min-w-[250px] sm:min-w-[500px] min-h-[500px] flex flex-col overflow-y-auto">
+  <h2 mat-dialog-title class=>{{data.title || 'Imagen flickr'}}</h2>
+  <div class="flex flex-wrap">
+    <div class="p-4 flex flex-col w-full sm:w-min text-[12px] sm:text-[16px]">
+      <img [ngStyle]="{'width' : 'fit-content'}" class="w-full sm:max-w-[400px] sm:min-w-[400px]" [src]="data.image" alt="image">
+      <span class="text-justify mt-2 w-full sm:w-[400px]"><strong>Descripcion: </strong>{{data.description}}</span>
+      <span class="mt-2 w-full"><strong>Autor: </strong>{{data.author}}</span>
+      <span class="mt-2 w-full"><strong>Publicado: </strong>{{data.published}}</span>
+    </div>
+    <span class="mt-2 w-full text-left sm:w-[400px] px-4 text-[12px] sm:text-[16px]"><strong>Tags: </strong>{{data.tags}}</span>
   </div>
+
 </div>

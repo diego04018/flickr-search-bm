@@ -1,12 +1,12 @@
 <div class="main-search-container w-full h-full flex flex-col items-center">
   <div class="shadow-md bg-slate-100 w-[80%] min-h-[600px] rounded-xl">
-    <span class="text-3xl font-bold flex my-[25px] justify-self-center">
+    <span class="text-2xl sm:text-3xl font-bold flex my-[25px] justify-self-center">
       Buscador de flickr
     </span>
     <div class="w-full flex flex-col px-4">
-        <mat-form-field class="w-full max-w-[300px] md:max-w-[400px] self-center">
+        <mat-form-field matTooltipPosition="above" matTooltip="Ingresa los tag separados por comas"  class="w-full max-w-[300px] md:max-w-[400px] self-center">
           <mat-label>Busqueda</mat-label>
-          <input matInput type="text" [(ngModel)]="value">
+          <input matInput type="text" [(ngModel)]="value" (keydown.enter)="startSearch()">
           @if (value) {
             <button matSuffix mat-icon-button aria-label="Clear" (click)="value=''; searchCompleted=false">
               <mat-icon>close</mat-icon>
@@ -20,7 +20,7 @@
         <ng-container *ngIf="searchCompleted && flickrFeed?.length === 0">
           <span class="text-2xl font-bold mt-12">{{msg}}</span>
         </ng-container>
-        <img class="img-cont drop-shadow-md" *ngFor="let item of flickrFeed" [src]="item.image" alt="image" (click)="openDialog(item)">
+        <img class="img-cont drop-shadow-md object-cover" *ngFor="let item of flickrFeed" [src]="item.image" alt="image" (click)="openDialog(item)" [matTooltip]="item.title" matTooltipPosition="above">
       </ng-container>
 
     </div>

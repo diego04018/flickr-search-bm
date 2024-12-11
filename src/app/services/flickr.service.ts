@@ -1,20 +1,19 @@
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from '../../environments/environment';
+import { FlickrRoutes } from '../data/flickr.enums';
+import { Observable } from 'rxjs';
+import { FlickrRes } from '../data/flickr.interface';
 
 @Injectable()
 export class FlickrService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
-  getFlickrFeed() {
-    return [
-      {image:'https://content.elmueble.com/medio/2023/02/26/perro-de-raza-shiba-inu_b6387407_230226130353_900x900.jpg'},
-      {image:'https://content.elmueble.com/medio/2023/02/26/perro-de-raza-shiba-inu_b6387407_230226130353_900x900.jpg'},
-      {image:'https://content.elmueble.com/medio/2023/02/26/perro-de-raza-shiba-inu_b6387407_230226130353_900x900.jpg'},
-      {image:'https://content.elmueble.com/medio/2023/02/26/perro-de-raza-shiba-inu_b6387407_230226130353_900x900.jpg'},
-      {image:'https://content.elmueble.com/medio/2023/02/26/perro-de-raza-shiba-inu_b6387407_230226130353_900x900.jpg'},
-      {image:'https://content.elmueble.com/medio/2023/02/26/perro-de-raza-shiba-inu_b6387407_230226130353_900x900.jpg'},
-      {image:'https://content.elmueble.com/medio/2023/02/26/perro-de-raza-shiba-inu_b6387407_230226130353_900x900.jpg'},
-      {image:'https://content.elmueble.com/medio/2023/02/26/perro-de-raza-shiba-inu_b6387407_230226130353_900x900.jpg'},
-      {image:'https://content.elmueble.com/medio/2023/02/26/perro-de-raza-shiba-inu_b6387407_230226130353_900x900.jpg'},]
+  getFlickrFeed(tags: string): Observable<FlickrRes> {
+    let params = new HttpParams();
+    params = params.set('tags', tags)
+    return this.http.get<FlickrRes>(`${environment.api_host}${FlickrRoutes.Feeds}`, { params });
   }
+
 }

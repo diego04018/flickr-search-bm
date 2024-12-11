@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogModule } from '@angular/material/dialog';
+import { FlickrItem } from '../../../../data/flickr.interface';
 
 @Component({
   selector: 'app-flickr-modal',
@@ -10,5 +11,5 @@ import { MAT_DIALOG_DATA, MatDialogModule } from '@angular/material/dialog';
   styleUrl: './flickr-modal.component.css'
 })
 export class FlickrModalComponent {
-  data = inject(MAT_DIALOG_DATA);
+  data: FlickrItem = inject(MAT_DIALOG_DATA);
 }

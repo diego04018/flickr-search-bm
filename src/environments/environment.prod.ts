@@ -1,4 +1,4 @@
 export const environment = {
-  api_host: 'http://api_challenge_it.test/',
+  api_host: 'http://35.193.97.101/',
   production: true,
 };

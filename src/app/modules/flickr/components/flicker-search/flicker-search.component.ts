@@ -54,8 +54,10 @@ export class FlickerSearchComponent {
   }
 
   openDialog(item: FlickrItem): void {
-    const tags = item.tags.split(" ").join(', ');
-    item.tags = tags;
+    if(!item.tags.includes(',')){
+      const tags = item.tags.split(" ").join(', ');
+      item.tags = tags;
+    }
     this.dialog.open(FlickrModalComponent, {
       data: {...item},
     });

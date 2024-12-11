@@ -4,7 +4,7 @@
   <h2 mat-dialog-title class=>{{data.title || 'Imagen flickr'}}</h2>
   <div class="flex flex-wrap">
     <div class="p-4 flex flex-col w-full sm:w-min text-[12px] sm:text-[16px]">
-      <img [ngStyle]="{'width' : 'fit-content'}" class="w-full sm:max-w-[400px] sm:min-w-[400px]" [src]="data.image" alt="image">
+      <img [ngStyle]="{'width' : 'fit-content'}" class="w-full sm:max-w-[400px] sm:min-w-[400px] max-h-[70vh]" [src]="data.image" alt="image">
       <span class="text-justify mt-2 w-full sm:w-[400px]"><strong>Descripcion: </strong>{{data.description}}</span>
       <span class="mt-2 w-full"><strong>Autor: </strong>{{data.author}}</span>
       <span class="mt-2 w-full"><strong>Publicado: </strong>{{data.published}}</span>

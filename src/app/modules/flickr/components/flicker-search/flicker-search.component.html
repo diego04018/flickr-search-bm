@@ -1,10 +1,10 @@
 <div class="main-search-container w-full h-full flex flex-col items-center">
   <div class="shadow-md bg-slate-100 w-[80%] min-h-[600px] rounded-xl">
     <span class="text-2xl sm:text-3xl font-bold flex my-[25px] justify-self-center">
-      Buscador de flickr
+      Buscador de <span class="text-[#0063db] ml-[5px]">flick</span><span class="text-[#ff0084]">r</span>
     </span>
     <div class="w-full flex flex-col px-4">
-        <mat-form-field matTooltipPosition="above" matTooltip="Ingresa los tag separados por comas"  class="w-full max-w-[300px] md:max-w-[400px] self-center">
+        <mat-form-field matTooltipPosition="above" matTooltip="Ingresa los tag separados por comas: perro, gato, ..."  class="w-full max-w-[300px] md:max-w-[400px] self-center">
           <mat-label>Busqueda</mat-label>
           <input matInput type="text" [(ngModel)]="value" (keydown.enter)="startSearch()">
           @if (value) {

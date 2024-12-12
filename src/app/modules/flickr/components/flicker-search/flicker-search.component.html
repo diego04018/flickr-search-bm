@@ -1,5 +1,5 @@
 <div class="main-search-container w-full h-full flex flex-col items-center">
-  <div class="shadow-md bg-slate-100 w-[80%] min-h-[600px] rounded-xl">
+  <div class="shadow-md bg-slate-100 w-[90%] sm:w-[80%] min-h-[600px] rounded-xl mb-[15px] sm:mb-[50px]">
     <span class="text-2xl sm:text-3xl font-bold flex my-[25px] justify-self-center">
       Buscador de <span class="text-[#0063db] ml-[5px]">flick</span><span class="text-[#ff0084]">r</span>
     </span>
@@ -18,7 +18,7 @@
     <div class="flex flex-wrap w-full max-w-[1100px] mt-6 gap-[10px] p-[20px] justify-center justify-self-center">
       <ng-container *ngIf="!isLoading ; else loader">
         <ng-container *ngIf="searchCompleted && flickrFeed?.length === 0">
-          <span class="text-2xl font-bold mt-12">{{msg}}</span>
+          <span class="text-center text-[12px] sm:text-2xl font-bold mt-6 sm:mt-12">{{msg}}</span>
         </ng-container>
         <img class="img-cont drop-shadow-md object-cover" *ngFor="let item of flickrFeed" [src]="item.image" alt="image" (click)="openDialog(item)" [matTooltip]="item.title" matTooltipPosition="above">
       </ng-container>

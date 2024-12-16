@@ -1,4 +1,4 @@
 export const environment = {
-  api_host: 'http://35.193.97.101/',
+  api_host: 'https://semantic-dalila-ricardsos-e7532680.koyeb.app/',
   production: true,
 };
